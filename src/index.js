@@ -1,4 +1,7 @@
 import _ from 'lodash';
+// eslint-disable-next-line
+const css = require('./main.styl');
+
 
 function component() {
 		const element = document.createElement('div');

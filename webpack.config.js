@@ -5,7 +5,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let templates = [];
-let dir = 'src';
+const dir = './src/pages';
 let files = fs.readdirSync(dir);
 
 files.forEach(file => {
@@ -14,35 +14,43 @@ files.forEach(file => {
     templates.push(
       new HtmlWebpackPlugin({
         template: dir + '/' + filename + '.pug',
-        filename: filename + '.html'
+		filename: filename + '.html',
+		inject: true
       })
     );
   }
 });
-console.log('Pages are: ');
-console.log(templates);
 
 module.exports = {
 	target: 'web',
 	mode: 'development',
 	entry: './src/index.js',
 	output: {
-	path: path.resolve(__dirname, 'dist'),
+	path: path.resolve(__dirname, 'build'),
 	filename: 'main.bundle.js'
 	},
+	devServer: {
+		contentBase: path.join(__dirname, '/build'),
+		compress: true,
+		port: 9000
+	},
 	plugins: [
-		...templates,
-		new HtmlWebpackPlugin()
+		...templates
 	],
 	module: {
 		rules: [
 			{
 				test: /\.pug$/,
-				include: path.join(__dirname, 'src'),
+				include: path.join(__dirname, './src'),
 				loaders: [
 					'pug-loader?pretty=true'
 				]
 			},
+			{
+				test: /\.styl$/,
+				loader: 'style-loader!css-loader!stylus-loader'
+			},
+			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
 		]
 	}
 };
