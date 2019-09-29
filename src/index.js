@@ -1,6 +1,7 @@
 import _ from 'lodash';
 // eslint-disable-next-line
-const css = require('./main.styl');
+require('./main.styl');
+require('assets/favicon.ico');
 
 
 function component() {

@@ -4,7 +4,7 @@
 	"description": "",
 	"private": true,
 	"scripts": {
-		"dev": "webpack-dev-server",
+		"dev": "webpack-dev-server --progress",
 		"build": "npx webpack"
 	},
 	"keywords": [],
@@ -16,6 +16,7 @@
 		"babel-loader": "^8.0.6",
 		"css-loader": "^3.2.0",
 		"eslint": "^6.4.0",
+		"file-loader": "^4.2.0",
 		"html-webpack-plugin": "^3.2.0",
 		"pug": "^2.0.4",
 		"pug-loader": "^2.4.0",

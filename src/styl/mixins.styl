@@ -1,0 +1,21 @@
+font-face($font-name, $file-path, $weight = 'normal', $style = 'normal')
+
+  $url  = 'url("' + $file-path + '.woff2") format("woff2"), '
+  $url = $url + 'url("' + $file-path + '.woff") format("woff")'
+
+  @font-face
+    font-family $font-name
+    src unquote($url)
+    font-display auto
+    font-weight unquote($weight)
+    font-style unquote($style)
+
+
+user-select()
+  -moz-user-select none
+  -webkit-user-select none
+  -ms-user-select none
+  user-select none
+  -webkit-user-drag none
+  user-drag none
+  -webkit-touch-callout none
