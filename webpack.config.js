@@ -39,7 +39,6 @@ module.exports = {
 	devServer: {
 		contentBase: path.join(__dirname, '/build'),
 		compress: true,
-		open: true,
 		overlay: true,
 		stats: 'errors-only',
 		port: 9000
@@ -58,7 +57,12 @@ module.exports = {
 			},
 			{
 				test: /\.styl$/,
-				loader: 'style-loader!css-loader!stylus-loader'
+				use: [
+				{ loader: 'style-loader' },
+				{ loader: 'css-loader', options: { sourceMap: true } },
+				{ loader: 'postcss-loader', options: { sourceMap: true } },
+				{ loader: 'stylus-loader', options: { sourceMap: true } }
+				]
 			},
 			{
 				test: /\.js$/,
