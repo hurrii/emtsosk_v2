@@ -1,2 +1,40 @@
 .header
-	background: linear-gradient(to bottom, white, black)
+	/* @keyframes duration | timing-function | delay | name */
+	animation: 1.25s ease-out 0s fadeInLeft
+
+	&__navbar
+		margin 0
+		padding 0
+		height 10rem
+		display flex
+		align-items center
+
+		list-style none
+		li
+			margin 0 3rem
+			&:first-of-type
+				margin-left 0
+		a
+			position relative
+			font-family 'Lato', sans-serif
+			color $darkgray
+			text-decoration none
+			transition opacity .3s ease-in
+
+			&::after
+				content: ''
+				display block
+				position absolute
+				width 0
+				height 2px
+				right 0
+				bottom -0.3rem
+				background linear-gradient(to right, $lblue_darker, $lblue)
+				transition width .3s cubic-bezier(.47,0,.745,.715)
+			
+			&:hover
+				@media $desktop
+					&::after
+						width 100%
+						left 0
+						transition width .3s cubic-bezier(.29,.18,.26,.83)

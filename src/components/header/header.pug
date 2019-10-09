@@ -1,4 +1,34 @@
 mixin header(data={})
 
 
-	p.header header works
+	-
+		const navbar = [
+			{
+			title: 'Главная',
+			link: '/'
+			},
+			{
+			title: 'О центре',
+			link: '#'
+			},
+			{
+			title: 'Экзамен',
+			link: '#'
+			},
+			{
+			title: 'Экспертиза',
+			link: '#'
+			},
+			{
+			title: 'Контакты',
+			link: '#'
+			},
+		];
+
+	header.header
+		.logo
+		.container
+			ul.header__navbar
+				each item in navbar
+					li
+						a(href=item.link)=item.title
