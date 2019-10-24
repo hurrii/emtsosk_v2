@@ -4,14 +4,17 @@
 	align-items center
 	flex-wrap wrap
 	padding-bottom 10rem
-	overflow hidden
 
 	&__content
+		overflow hidden
 		position relative
+		width 60%
+		padding 2rem
 		
-		p
+		h1
+		h5
 			opacity 0
-			animation: 1.75s ease 2.5s changeOpacity forwards
+			animation: 0.9s ease 2.1s revealContent forwards
 
 		&::before
 			content ''
@@ -24,4 +27,4 @@
 			background $lblue
 			z-index 2
 			transform scaleX(0)
-			animation: 1.75s ease-in-out 1.75s revealToRight forwards
+			animation: 1s ease 1.75s revealToRight forwards
