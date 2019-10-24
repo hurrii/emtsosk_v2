@@ -1,4 +1,8 @@
-extends ../layout/layout.pug
+extends ~src/layout/layout.pug
+include ~src/components/hero/hero.pug
+
 block content
 	.container
-		p Yay it really does work!
+		+hero()
+
+

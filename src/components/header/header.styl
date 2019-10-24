@@ -1,25 +1,49 @@
 .header
+	position relative
 	/* @keyframes duration | timing-function | delay | name */
 	animation: 1.25s ease-out 0s fadeInLeft
+	height 10rem
+	display flex
+
+	&__logo
+		position absolute
+		top 50%
+		left 5rem
+		transform: translateY(-50%)
+		color $lblue_darker
+		&:hover
+			color $lblue
+			svg
+					transition-delay 0s
+					transform rotate(0deg) scale(1.2)
+
+		svg
+			transition transform 1.5s ease
+			transition-delay 1s
+			width 5rem
+			height 5rem
+			transform rotate(360deg) scale(1.2)
 
 	&__navbar
 		margin 0
 		padding 0
-		height 10rem
 		display flex
 		align-items center
+		height 100%
 
 		list-style none
+
 		li
 			margin 0 3rem
 			&:first-of-type
 				margin-left 0
+
 		a
 			position relative
 			font-family 'Lato', sans-serif
-			color $darkgray
+			color $lightgray
 			text-decoration none
-			transition opacity .3s ease-in
+			transition opacity .3s ease-in, color .2s ease
 
 			&::after
 				content: ''
@@ -33,6 +57,7 @@
 				transition width .3s cubic-bezier(.47,0,.745,.715)
 			
 			&:hover
+				color $darkgray
 				@media $desktop
 					&::after
 						width 100%
