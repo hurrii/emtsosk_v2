@@ -31,12 +31,15 @@
 		align-items center
 		height 100%
 
-		list-style none
+.navbar
+	list-style none
 
-		li
-			margin 0 3rem
-			&:first-of-type
-				margin-left 0
+
+	&__link
+		margin 0 3rem
+
+		&:first-of-type
+			margin-left 0
 
 		a
 			position relative
@@ -63,3 +66,10 @@
 						width 100%
 						left 0
 						transition width .3s cubic-bezier(.29,.18,.26,.83)
+			
+		&--active
+			a
+				color $darkgray
+
+				&::after
+					width 100%

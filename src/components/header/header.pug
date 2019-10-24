@@ -4,24 +4,24 @@ mixin header(data={})
 	-
 		const navbar = [
 			{
-			title: 'Главная',
-			link: '/'
+				title: 'Главная',
+				href: '/'
 			},
 			{
-			title: 'О центре',
-			link: '#'
+				title: 'О центре',
+				href: '#'
 			},
 			{
-			title: 'Экзамен',
-			link: '#'
+				title: 'Экзамен',
+				href: '#'
 			},
 			{
-			title: 'Экспертиза',
-			link: '#'
+				title: 'Экспертиза',
+				href: '#'
 			},
 			{
-			title: 'Контакты',
-			link: '#'
+				title: 'Контакты',
+				href: '#'
 			},
 		];
 
@@ -33,7 +33,11 @@ mixin header(data={})
 			</svg>
 
 		.container
-			ul.header__navbar
-				each item in navbar
-					li
-						a(href=item.link)=item.title
+			ul.header__navbar.navbar
+				each link, index in navbar
+					if index == pageIndex
+						li.navbar__link.navbar__link--active
+							a(href=link.href)=link.title
+					else
+						li.navbar__link
+							a(href=link.href)=link.title

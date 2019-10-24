@@ -1,5 +1,5 @@
 .hero
-	height calc(100% - 8rem)
+	height calc(100vh - 8rem)
 	display flex
 	align-items center
 	flex-wrap wrap
@@ -8,13 +8,9 @@
 	&__content
 		overflow hidden
 		position relative
-		width 60%
-		padding 2rem
+		padding 0 2rem
+		margin-left -2rem
 		
-		h1
-		h2
-			opacity 0
-			animation: 0.9s ease 2.1s revealContent forwards
 
 		&::before
 			content ''
@@ -26,5 +22,51 @@
 			height 100%
 			background $lblue
 			z-index 2
-			transform scaleX(0)
-			animation: 1s ease 1.75s revealToRight forwards
+			transform translateX(-100%)
+			animation: 1.5s ease 1.75s revealToRight forwards
+
+	&__org
+	&__line
+	&__func
+	&__discover
+		opacity 0
+		animation: 1.25s ease-in-out 1.85s revealToRight2 forwards
+
+	&__org
+	&__discover
+		font-size 2.1rem
+		line-height 3.4rem
+		letter-spacing 0.1rem
+		font-family 'Lato', sans-serif
+	
+	&__org
+		position relative
+		text-transform uppercase
+		font-weight bold
+		max-width 24rem
+
+		&::before
+			content: ''
+			display block
+			position absolute
+			width 3.5rem
+			height 2px
+			background $lblue
+			top 50%
+			transform translateY(-50%)
+			right 0
+	
+	&__line
+		display: block
+		width: 4rem
+		height: 2px
+		background: $lblue
+		margin-left 1rem
+	
+	&__func
+		font-size 6rem
+		line-height 1.177
+
+	&__discover
+		// 
+
