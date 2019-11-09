@@ -84,8 +84,13 @@ a:focus {
 		width 108rem
 
 .background-canvas
-		position fixed
-		top 0
-		right 0
-		width 40%
-		height 100%
+	position fixed
+	top 0
+	right 0
+	width 40%
+	height 100%
+	opacity 0
+
+	&--active
+		transition opacity 10s linear
+		opacity 1
