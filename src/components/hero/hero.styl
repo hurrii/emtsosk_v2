@@ -8,29 +8,39 @@
 	&__content
 		overflow hidden
 		position relative
-		padding 0 2rem
-		margin-left -2rem
+		padding 0 10rem
+		margin-left -10rem
+		margin-right -10rem
 
-	&__org
-	&__line
+
 	&__func
-	&__discover
-		opacity 0
-		animation: .3s ease 2.5s revealToRight2 forwards
-		z-index 1
+		.page--active &
+			div
+				opacity 0
+				animation: .8s cubic-bezier(.455,.03,.515,.955) 2.4s revealToRightText forwards
+		
+		&--anim2
+			.page--active &
+				div
+					animation-delay 3s
 
 	&__org
 	&__discover
-		font-size 2.1rem
-		line-height 3.4rem
-		letter-spacing 0.1rem
-		font-family 'Lato', sans-serif
+		div
+			font-size 2.1rem
+			line-height 3.4rem
+			letter-spacing 0.1rem
+			font-family 'Lato', sans-serif
 	
 	&__org
 		position relative
 		text-transform uppercase
 		font-weight bold
-		max-width 24rem
+		max-width 22.5rem
+		opacity 0
+
+		.page--active &
+			animation 1s ease 1.2s fadeInLeft forwards
 
 		&::before
 			content: ''
@@ -44,17 +54,13 @@
 			right 0
 			z-index 2
 	
-	&__line
-		display: block
-		width: 4rem
-		height: 2px
-		background: $lblue
-		margin-left 1rem
 	
 	&__func
+		position relative
 		font-size 6rem
 		line-height 1.1
 		padding: 0.5rem 0
+		transform-origin 0 0
 
 		&::before
 			content ''
@@ -66,18 +72,39 @@
 			height 100%
 			background $lblue
 			z-index 2
-			transform translateX(-100%)
-			animation: 2.5s ease 0.1s revealToRight forwards
-			opacity 1
+			transform translateX(0) scaleX(0)
+			transform-origin 0 0
 
-		&--anim1
-			&::before
-				// animation-delay .6s
+			.page--active &
+				animation .6s cubic-bezier(.455,.03,.515,.955) 1.8s revealToRight forwards
 
-		&--anim2
-			&::before
-				animation-delay .5s
+		.page--active &
+			&--anim2
+				&::before
+					animation-delay 2.45s
 
 	&__discover
 		margin-top 1rem
+		user-select none
 
+		&:hover
+			cursor pointer
+			button
+				color $lblue_darker
+				transform translateX(3px)
+		
+		div
+			display flex
+			align-items baseline
+			opacity 0
+			animation 1s ease 4.2s fadeInLeft forwards
+
+	&__more
+		border none
+		background none
+		padding .5rem
+		transition transform .3s ease
+
+		svg
+			width 1.3rem
+			height 1.3rem
