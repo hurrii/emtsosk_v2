@@ -1,0 +1,32 @@
+mixin contacts(data={})
+
+	//- TODO: nodemailer
+	.contacts
+		.row
+			.col.col-7
+
+				.contacts__mail-us
+					h1.contacts__heading Напишите нам
+					.contacts__description
+						| Если у Вас есть вопрос или предложение по работе центра,
+						br
+						| мы с радостью его прочитаем.
+						| Будет признательны за любую обратную связь. Не уверены стоит ли писать? Пишите.
+						| Мы всегда открыты к диалогу.
+
+					form.contacts__form(action="mailto:hurrii.ftw@gmail.com" method="post" enctype="text/plain")
+						input(type='text' name='firstname' placeholder='Ваше имя')
+						input(type='text' name='lastname' placeholder='Ваша фамилия')
+						input(type='email' name='email' placeholder='Email')
+						textarea(name='message' rows='10' placeholder='Ваше сообщение')
+						button.contacts__send-form(type='submit' value='Send')
+							span.contacts__send-text Отправить
+							span.contacts__send-icon
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><g data-name="chevron-right"><rect transform="rotate(-90 12 12)"/><path d="M10.5 17a1 1 0 0 1-.71-.29 1 1 0 0 1 0-1.42L13.1 12 9.92 8.69a1 1 0 0 1 0-1.41 1 1 0 0 1 1.42 0l3.86 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-.7.32z"/></g></g></svg>
+
+				.contacts__divider
+
+			.col.col-3
+
+				.contacts__info
+					| Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit corporis labore quia, tempora non eum officiis porro ut expedita delectus assumenda debitis dolorum dignissimos aperiam ipsa voluptatum, vitae quo id corrupti fugiat beatae repellat. Cum eius modi impedit alias quod? Ratione doloremque neque quibusdam temporibus dolor cupiditate necessitatibus iusto eligendi voluptatibus, delectus rem voluptates recusandae, sequi commodi architecto soluta quaerat explicabo magni dolores alias voluptatum perspiciatis harum. Quae doloremque, esse suscipit rem sed neque obcaecati excepturi, nemo ex veniam, dolorum vero soluta ratione perspiciatis? Fugiat commodi corrupti numquam dolores ab.

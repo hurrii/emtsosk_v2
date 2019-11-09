@@ -10,7 +10,7 @@ html(lang="ru")
 		block head
 			+head()
 	body
-		.page(style='visibility: hidden')
+		.page(class=`page--${pageClass}` style='visibility: hidden')
 			block header
 				+header()
 			block content

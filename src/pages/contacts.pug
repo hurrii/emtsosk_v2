@@ -1,0 +1,12 @@
+extends ~src/layout/layout.pug
+
+include ~src/components/contacts/contacts.pug
+
+append vars
+	-
+		const pageIndex = 5
+		const pageClass = 'contacts'
+
+block content
+	.container
+		+contacts()

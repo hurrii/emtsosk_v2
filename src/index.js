@@ -22,5 +22,5 @@ window.addEventListener('load', () => {
 		document.querySelector('.page').classList.add('page--active');
 		document.querySelector('.preloader').classList.add('preloader--hidden');
 		document.querySelector('.background-canvas').classList.add('background-canvas--active');
-	}, 1000);
+	}, 200);
 });
