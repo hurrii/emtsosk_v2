@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
 	setTimeout(() => {
 		document.querySelector('.page').style.visibility = 'visible';
 		document.querySelector('.page').classList.add('page--active');
-		document.querySelector('.preloader').style.visibility = 'hidden';
+		document.querySelector('.preloader').classList.add('preloader--hidden');
+		document.querySelector('.background-canvas').classList.add('background-canvas--active');
 	}, 1000);
 });
