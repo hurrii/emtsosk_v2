@@ -16,7 +16,8 @@
 	&__func
 	&__discover
 		opacity 0
-		animation: 1.2s ease-in-out .6s revealToRight2 forwards
+		animation: .3s ease 2.5s revealToRight2 forwards
+		z-index 1
 
 	&__org
 	&__discover
@@ -41,6 +42,7 @@
 			top 50%
 			transform translateY(-50%)
 			right 0
+			z-index 2
 	
 	&__line
 		display: block
@@ -65,17 +67,16 @@
 			background $lblue
 			z-index 2
 			transform translateX(-100%)
-			animation: 1.5s ease 0s revealToRight forwards
+			animation: 2.5s ease 0.1s revealToRight forwards
+			opacity 1
 
 		&--anim1
-			animation-delay .9s
 			&::before
-				animation-delay .6s
-			//
+				// animation-delay .6s
+
 		&--anim2
-			animation-delay 1.2s
 			&::before
-				animation-delay .9s
+				animation-delay .5s
 
 	&__discover
 		margin-top 1rem

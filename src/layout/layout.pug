@@ -1,5 +1,6 @@
 include _head.pug
 include ~src/components/header/header.pug
+include ~src/components/preloader/preloader.pug
 
 block vars
 
@@ -9,7 +10,10 @@ html(lang="ru")
 		block head
 			+head()
 	body
-		block header
-			+header()
-		block content
-		block footer
+		.page(style='visibility: hidden')
+			block header
+				+header()
+			block content
+			block footer
+		block preloader
+			+preloader()
